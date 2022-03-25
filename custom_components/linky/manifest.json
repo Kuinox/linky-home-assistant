@@ -4,7 +4,7 @@
   "documentation": "",
   "version": "1.0.0",
   "requirements": [
-    "requests==2.25.1"
+    "requests>=2.25.1"
   ],
   "dependencies": [],
   "codeowners": [
