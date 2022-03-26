@@ -85,6 +85,13 @@ class LinkyAccount:
         _LOGGER.debug('Querying Linky library for new data...')
 
         try:
+            
+             _LOGGER.debug('data={0}'.format(json.dumps({
+                'type': 'daily_consumption',
+                'usage_point_id': self._point_id,
+                'start': datetime.now().replace(day=1).strftime('%Y-%m-%d'),
+                'end': datetime.now().strftime('%Y-%m-%d')
+            }, indent=2)))
             # Get full month data
             data = requests.post('https://enedisgateway.tech/api', headers={
                 'Authorization': self._api_key
